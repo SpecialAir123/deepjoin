@@ -49,3 +49,34 @@ Here are some parameters:
 ```sh
 python deepjoin_infer.py 
 ```
+
+
+
+**Step4: Full End-to-End Inference**
+
+Here are the parameters for running the complete pipeline (`deepjoin_run_all.py`), which will:
+
+1. Convert your query and seller CSVs into text prompts  
+2. Embed them with your fine-tuned DeepJoin model  
+3. Perform FAISS search to find the top-K joinable columns  
+
+> --query_csv    [Path to your query CSV file, str]  
+> --query_col    [Column name in the query CSV to join on, str]  
+> --datalake_dir [Directory containing your seller CSVs, str]  
+> --topk         [Number of joinable columns to retrieve, int]  
+> --model_path   [Path to your fine-tuned SentenceTransformer model, str]  
+
+```sh
+python deepjoin_run_all.py \
+  --query_csv    data/query.csv \
+  --query_col    Country \
+  --datalake_dir data/sellers/ \
+  --topk         10 \
+  --model_path   output/deepjoin_webtable_training-all-mpnet-base-v2-2023-10-18_19-54-27
+
+
+
+
+
+
+
