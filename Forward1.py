@@ -12,10 +12,12 @@ import os
 import csv
 import pickle
 import multiprocessing
-
+import time
 
 def process_onedataset(dataset_file,model_name ='output/deepjoin_webtable_training-all-mpnet-base-v2-2023-10-18_19-54-27',
                     storepath = "/home/lijiajun/deepjoin/webtable/final_result/"):
+    
+    start = time.time()
 
     path,filename_dataset = os.path.split(dataset_file)
 
@@ -40,6 +42,9 @@ def process_onedataset(dataset_file,model_name ='output/deepjoin_webtable_traini
     with open(storefilename,"wb") as f:
         pickle.dump(storedata,f)
     print("data process sucess",storefilename)
+    ms = (time.time() - start) * 1000
+    return ms
+
 
 
 

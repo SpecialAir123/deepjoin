@@ -3,7 +3,7 @@ import argparse
 from torch.utils.data import DataLoader
 import math
 import torch
-from deepjoin.deepjoinitem.Forward1 import process_onedataset
+from Forward1 import process_onedataset
 from sentence_transformers import SentenceTransformer, LoggingHandler, losses, util, InputExample
 from sentence_transformers.evaluation import EmbeddingSimilarityEvaluator
 from torch.nn.parallel import DataParallel
@@ -24,7 +24,7 @@ parser.add_argument("--storepath", help="storepath")
 
 args = parser.parse_args()
 
-dataset  = args.dataset_para
+dataset  = args.dataset
 datafile = args.datafile
 storepath= args.storepath
 if __name__ == '__main__':

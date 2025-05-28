@@ -21,7 +21,7 @@ parser.add_argument("--dataset", help="dataset")
 parser.add_argument("--model_name", help="model_name")
 parser.add_argument("--model_save_path", help="model_save_path")
 parser.add_argument("--file_train_path", help="file_train_path")
-parser.add_argument("--tain_csv_file", help="tain_csv_file")
+parser.add_argument("--train_csv_file", help="tain_csv_file")
 parser.add_argument("--storepath", help="storepath")
 args = parser.parse_args()
 
